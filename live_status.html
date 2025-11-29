@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Live Status — Adage Day 2025</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #fff8f3;
+        font-family: system-ui, sans-serif;
+        padding-bottom: 90px;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .gold {
+        color: #d4af37;
+        font-weight: 600;
+      }
+      .silver {
+        color: #c0c0c0;
+        font-weight: 600;
+      }
+      .bronze {
+        color: #cd7f32;
+        font-weight: 600;
+      }
+
+      .event-card,
+      .leader-card {
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        margin-bottom: 18px;
+      }
+
+      .leader-gold {
+        background: #fff4c2 !important;
+        border: 2px solid #d4af37 !important;
+        font-weight: 600;
+        color: #8b6b00;
+      }
+
+      td,
+      th {
+        padding: 10px;
+      }
+      th {
+        font-weight: 600;
+      }
+
+      tbody tr:hover {
+        background-color: #f8f8f8;
+        transition: all 0.2s ease;
+      }
+
+      nav a {
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+      nav a:hover {
+        color: #008b94;
+        border-bottom: 2px solid #008b94;
+      }
+
+      .mobile-nav {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        border-radius: 28px;
+        box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.1);
+      }
+      .mobile-nav a {
+        flex: 1;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 11px;
+      }
+      /* 
+      .mobile-nav a {
+        flex: 1;
+        text-align: center;
+        font-size: 10px;
+      } */
+      .mobile-nav a span {
+        font-size: 22px;
+        display: block;
+      }
+      .mobile-nav a:hover {
+        background-color: rgba(201, 165, 74, 0.15);
+      }
+      .mobile-nav a:active {
+        transform: scale(0.93);
+      }
+    </style>
+  </head>
+
+  <body class="text-gray-800">
+    <!-- Desktop Header -->
+    <header class="hidden md:block shadow-sm bg-white">
+      <div
+        class="max-w-6xl mx-auto py-4 px-6 flex justify-between items-center"
+      >
+        <span
+          class="text-xl font-extrabold tracking-widest text-[#008B94] uppercase"
+          >Adage Day 2025</span
+        >
+        <nav class="flex gap-6 text-sm font-medium">
+          <a href="index.html">Home</a>
+          <a href="message.html">Message</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="rules.html">Guidelines</a>
+          <a href="contacts.html">Contacts</a>
+          <a href="guest.html">Outstation</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="max-w-3xl mx-auto px-4 py-10">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-[#008B94]">Live Status</h1>
+        <p class="text-xs text-gray-600">
+          Updated Event Results & Team Prize Standings
+        </p>
+        <div class="mt-2 w-20 h-1 bg-[#C9A54A] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Event Results -->
+      <div class="event-card">
+        <h3 class="text-lg font-semibold text-[#008B94] mb-3">
+          🏁 Event-Wise Winners
+        </h3>
+
+        <table class="w-full text-xs text-center border-collapse">
+          <thead class="bg-[#008B94] text-white">
+            <tr>
+              <th>Event</th>
+              <th class="gold">🥇 1st Place</th>
+              <th class="silver">🥈 2nd Place</th>
+              <th class="bronze">🥉 3rd Place</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 KM Race</td>
+              <td class="gold" data-team="Red Bull" data-money="50000">Red Bull</td>
+              <td class="silver" data-team="Alpine" data-money="30000">Alpine</td>
+              <td class="bronze" data-team="McLaren" data-money="20000">McLaren</td>
+            </tr>
+            <tr>
+              <td>100 MTR Race</td>
+              <td class="gold" data-team="Red Bull, Alpine" data-money="40000">Red Bull, Alpine</td>
+              <td class="silver" data-team="Red Bull, Alpine" data-money="30000">--</td>
+              <td class="bronze" data-team="McLaren" data-money="20000">McLaren</td>
+            </tr>
+            <tr>
+              <td>Football</td>
+              <td class="gold" data-team="Red Bull, McLaren, Mercedes" data-money="75000">Red Bull, McLaren, Mercedes</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Futsal</td>
+              <!-- <td class="gold" data-team="Red Bull, Aston Martin, Ferrari" data-money="75000">Red Bull, Aston Martin, Ferrari</td> -->
+              <td class="gold" data-team="Red Bull, McLaren, Mercedes" data-money="75000">Red Bull, McLaren, Mercedes</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>GTM</td>
+              <td class="gold" data-team="Alpine" data-money="50000">Alpine</td>
+              <td class="silver" data-team="Ferrari" data-money="30000">Ferrari</td>
+              <td class="bronze" data-team="Aston Martin" data-money="20000">Aston Martin</td>
+            </tr>
+            <tr>
+              <td>Treasure Hunt</td>
+              <td class="gold" data-team="Alpine" data-money="60000">Alpine</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Leaderboard -->
+      <div class="mt-10 leader-card">
+        <h3 class="text-lg font-semibold text-[#008B94] mb-3 text-center">
+          🏆 Team Prize Standings
+        </h3>
+
+        <table
+          class="w-full text-xs text-center border-collapse"
+          id="leaderboardTable"
+        >
+          <thead class="bg-[#C9A54A] text-white">
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Total Prize Money</th>
+            </tr>
+          </thead>
+          <tbody id="teamTotals">
+            <tr>
+              <td colspan="3" class="text-gray-400 italic py-3">
+                No event results yet
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Mobile Navigation -->
+    <!-- <nav class="mobile-nav fixed bottom-3 left-1/2 -translate-x-1/2 w-[92%] px-4 py-2 
+              rounded-full flex justify-around md:hidden z-50 shadow-lg">
+    <a href="index.html"><span class="material-icons">home</span><div>Home</div></a>
+    <a href="schedule.html"><span class="material-icons">event</span><div>Schedule</div></a>
+    <a href="rules.html"><span class="material-icons">rule</span><div>Guidelines</div></a>
+    <a href="contacts.html"><span class="material-icons">call</span><div>Contacts</div></a>
+    <a href="guest.html"><span class="material-icons">flight_takeoff</span><div>Outstation</div></a>
+  </nav> -->
+
+    <!-- Bottom Mobile Navigation -->
+    <nav
+      class="mobile-nav fixed bottom-3 left-1/2 -translate-x-1/2 w-[92%] px-4 py-2 rounded-full flex justify-around md:hidden z-50 shadow-lg"
+    >
+      <a href="index.html"
+        ><span class="material-icons">home</span>
+        <div>Home</div></a
+      >
+      <a href="schedule.html"
+        ><span class="material-icons">event</span>
+        <div>Schedule</div></a
+      >
+      <a href="rules.html"
+        ><span class="material-icons">rule</span>
+        <div>Guidelines</div></a
+      >
+      <a href="contacts.html"
+        ><span class="material-icons">call</span>
+        <div>Contacts</div></a
+      >
+      <a href="guest.html"
+        ><span class="material-icons">flight_takeoff</span>
+        <div>Outstation</div></a
+      >
+    </nav>
+
+    <!-- Footer -->
+    <footer class="text-center py-5 text-xs mt-12 border-t border-gray-200">
+      © 2025 Adage Automation Pvt. Ltd
+      <br />
+      One Team • One Soul
+    </footer>
+
+    <!-- JavaScript Calculation Logic -->
+    <script>
+      const teams = [
+        "Red Bull",
+        "Alpine",
+        "Aston Martin",
+        "Mercedes",
+        "Ferrari",
+        "McLaren",
+      ];
+      const totals = {};
+      teams.forEach((t) => (totals[t] = 0));
+
+      document.querySelectorAll("td[data-team]").forEach((cell) => {
+        const teamNames = cell.dataset.team;
+        const money = parseInt(cell.dataset.money) || 0;
+
+        if (teamNames) {
+          const winners = teamNames.split(",").map((t) => t.trim());
+          const share = Math.floor(money / winners.length);
+
+          winners.forEach((team) => {
+            if (totals[team] !== undefined) totals[team] += share;
+          });
+        }
+      });
+
+      const filtered = Object.entries(totals).filter(
+        ([team, money]) => money > 0
+      );
+      const sorted = filtered.sort((a, b) => b[1] - a[1]);
+
+      document.getElementById("teamTotals").innerHTML =
+        sorted.length > 0
+          ? sorted
+              .map(
+                ([team, money], index) => `
+            <tr class="${index === 0 ? "leader-gold" : ""}">
+              <td>${index === 0 ? "🏆" : index + 1}</td>
+              <td class="font-medium">${team}</td>
+              <td class="font-semibold">₹${money.toLocaleString()}</td>
+            </tr>`
+              )
+              .join("")
+          : `<tr><td colspan="3" class="text-gray-400 italic py-3">No results yet</td></tr>`;
+    </script>
+  </body>
+</html>

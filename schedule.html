@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Schedule — Adage Day 2025</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        background-color: #fff7f0;
+        padding-bottom: 90px;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+      }
+
+      nav a {
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+      nav a:hover {
+        color: #008b94;
+        border-bottom: 2px solid #008b94;
+      }
+      .nav-active {
+        color: #c9a54a !important;
+        font-weight: 600;
+      }
+
+      /* Day Button Styling */
+      .day-btn {
+        flex: 1;
+        padding: 8px 0;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+      .day-btn.active {
+        background-color: #008b94;
+        color: white;
+        border: 1px solid #00727a;
+        box-shadow: 0 4px 8px rgba(0, 115, 122, 0.25);
+      }
+
+      /* Sub Tab Buttons */
+      .tab-btn {
+        padding: 6px 14px;
+        border-radius: 25px;
+        font-size: 12px;
+        cursor: pointer;
+        background-color: #f4fbfb;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+      .tab-btn.active {
+        background-color: #008b94;
+        color: white;
+        border: 1px solid #006b74;
+        box-shadow: 0 3px 6px rgba(0, 139, 148, 0.35);
+      }
+
+      /* Content Section */
+      .content-section {
+        display: none;
+      }
+      .content-section.active {
+        display: block;
+      }
+
+      /* Event Card */
+      .event-card {
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        margin-bottom: 14px;
+        background-color: white;
+      }
+
+      /* Table Styling */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 8px;
+      }
+      th {
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      tr:hover {
+        background-color: #f1f7f7;
+      }
+
+      /* Animation */
+      .fade {
+        animation: fadeIn 0.4s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Mobile Nav Icons */
+      /* .mobile-nav a div {
+        font-size: 10px;
+      }
+      .mobile-nav a span {
+        font-size: 22px;
+      } */
+      /* Mobile Navigation */
+      .mobile-nav {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.1);
+        border-radius: 28px;
+      }
+      .mobile-nav a {
+        flex: 1;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 11px;
+        transition: transform 0.2s ease;
+      }
+      .mobile-nav a:hover {
+        background-color: rgba(201, 165, 74, 0.15);
+      }
+      .mobile-nav a:active {
+        transform: scale(0.93);
+      }
+    </style>
+  </head>
+
+  <body class="text-gray-800">
+    <!-- Desktop Header -->
+    <header class="hidden md:block shadow-sm bg-white">
+      <div
+        class="max-w-6xl mx-auto py-4 px-6 flex justify-between items-center"
+      >
+        <span
+          class="text-xl font-extrabold tracking-widest text-[#008B94] uppercase"
+          >Adage Day 2025</span
+        >
+        <nav class="flex gap-6 text-sm font-medium">
+          <a href="index.html">Home</a>
+          <a href="message.html">Message</a>
+          <a href="schedule.html" class="nav-active">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="rules.html">Guidelines</a>
+          <a href="contacts.html">Contacts</a>
+          <a href="guest.html">Outstation</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="max-w-2xl mx-auto px-4 py-8">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#008B94]">Event Schedule</h2>
+        <p class="text-xs text-gray-500 mt-1">29 & 30 November 2025</p>
+        <div class="mt-2 w-20 h-1 bg-[#C9A54A] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- DAY SWITCH TABS -->
+      <div
+        class="flex justify-center mb-6 bg-white rounded-full shadow-md p-1 w-full max-w-xs mx-auto"
+      >
+        <button onclick="showDay(1)" id="tab1" class="day-btn active">
+          Day 1
+        </button>
+        <button onclick="showDay(2)" id="tab2" class="day-btn">Day 2</button>
+      </div>
+
+      <!-- ---------------- DAY 1 ---------------- -->
+      <div id="day1" class="fade">
+        <!-- Sports Day -->
+        <div
+          class="event-card bg-gradient-to-r from-[#E6F8F9] to-white shadow-sm border border-[#008B94]/10"
+        >
+          <h3 class="text-lg font-bold text-[#008B94] flex items-center gap-2">
+            ⚽ Sports Day
+          </h3>
+          <p class="text-xs text-gray-500">29 November 2025 • Morning</p>
+
+          <a
+            href="https://maps.app.goo.gl/e5Tf4UHbC63NQYK87"
+            target="_blank"
+            class="mt-4 flex items-center justify-between bg-white border border-[#008B94]/20 p-3 rounded-xl hover:shadow-md transition"
+          >
+            <div>
+              <p
+                class="font-semibold text-[#008B94] text-sm flex items-center gap-1"
+              >
+                <span class="material-icons text-base">location_on</span>
+                Don Bosco College of Engineering
+              </p>
+              <p class="text-xs text-gray-500">Margao, Goa</p>
+            </div>
+            <span class="material-icons text-[#008B94] text-xl"
+              >arrow_forward_ios</span
+            >
+          </a>
+        </div>
+
+        <div class="flex gap-3 justify-center mb-4">
+          <button class="tab-btn active" onclick="openTab('sportsSchedule')">
+            Schedule
+          </button>
+          <button class="tab-btn" onclick="openTab('sportsDress')">
+            Dress Code
+          </button>
+          <button class="tab-btn" onclick="openTab('sportsRules')">
+            Rules
+          </button>
+        </div>
+
+        <div id="sportsSchedule" class="content-section active fade">
+          <div class="event-card">
+            <table class="w-full text-sm text-center">
+              <tr class="bg-[#008B94] text-white">
+                <th>TIME</th>
+                <th>EVENT</th>
+              </tr>
+              <tr>
+                <td>05:00 AM</td>
+                <td>Reporting</td>
+              </tr>
+              <tr>
+                <td>06:00 AM</td>
+                <td>Running Event I</td>
+              </tr>
+              <tr>
+                <td>07:30 AM</td>
+                <td>Running Event II / Breakfast</td>
+              </tr>
+              <tr>
+                <td>08:00 AM</td>
+                <td>Football & Futsal</td>
+              </tr>
+              <tr>
+                <td>11:30 AM</td>
+                <td>Lunch</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div id="sportsDress" class="content-section fade">
+          <div class="event-card">
+            <p class="text-sm leading-relaxed">
+              <strong>Track Events:</strong> Team Jersey, Track Pants/Shorts,
+              Sports Shoes<br />
+              <strong>Football/Futsal:</strong> Team Jersey, Shorts, Football
+              Shoes(For futsal, shoes with studs are not allowed), Socks and
+              Shin Guards(compulsory).<br />
+              <strong>Note:</strong> Carry your own water bottle. Refill will be
+              available.
+            </p>
+          </div>
+        </div>
+
+        <div id="sportsRules" class="content-section fade">
+          <div class="event-card text-sm">
+            • Reporting at 5:00 AM<br />
+            • Report in correct sports attire (Sports Shoes, Team Jersey, Track
+            Pants/Shorts)<br />
+            • Carry your own water bottle.<br />
+            • Do warm up and stretching before the sport event begins.
+          </div>
+        </div>
+
+        <hr class="my-8" />
+
+        <!-- Awards Night -->
+        <div
+          class="event-card bg-gradient-to-r from-[#FFF7E5] to-white shadow-sm border border-[#C9A54A]/15"
+        >
+          <h3 class="text-lg font-bold text-[#C9A54A] flex items-center gap-2">
+            🏆 Awards Night
+          </h3>
+          <p class="text-xs text-gray-500">29 November 2025 • Evening</p>
+
+          <a
+            href="https://maps.app.goo.gl/ACETfEfKb1446Zcb7"
+            target="_blank"
+            class="mt-4 flex items-center justify-between bg-white border border-[#C9A54A]/20 p-3 rounded-xl hover:shadow-md transition"
+          >
+            <div>
+              <p
+                class="font-semibold text-[#C9A54A] text-sm flex items-center gap-1"
+              >
+                <span class="material-icons text-base">location_on</span>
+                Adage Unit 1
+              </p>
+              <p class="text-xs text-gray-500">Verna, Goa</p>
+            </div>
+            <span class="material-icons text-[#C9A54A] text-xl"
+              >arrow_forward_ios</span
+            >
+          </a>
+        </div>
+
+        <div class="flex gap-3 justify-center mb-4">
+          <button class="tab-btn active" onclick="openTab('awardsSchedule')">
+            Schedule
+          </button>
+          <button class="tab-btn" onclick="openTab('awardsDress')">
+            Dress Code
+          </button>
+        </div>
+
+        <div id="awardsSchedule" class="content-section active fade">
+          <div class="event-card">
+            <table class="w-full text-sm text-center">
+              <tr class="bg-[#C9A54A] text-white">
+                <th>TIME</th>
+                <th>EVENT</th>
+              </tr>
+              <tr>
+                <td>4:30 PM</td>
+                <td>Reporting & Hi-Tea</td>
+              </tr>
+              <tr>
+                <td>5:00 PM</td>
+                <td>GTM</td>
+              </tr>
+              <tr>
+                <td>6:00 PM</td>
+                <td>Bio Break</td>
+              </tr>
+              <tr>
+                <td>6:30 PM</td>
+                <td>Treasure Hunt</td>
+              </tr>
+              <tr>
+                <td>7:45 PM</td>
+                <td>Lamp Lighting</td>
+              </tr>
+              <tr>
+                <td>8:00 PM</td>
+                <td>Awards</td>
+              </tr>
+              <tr>
+                <td>9:15 PM</td>
+                <td>Entertainment</td>
+              </tr>
+              <tr>
+                <td>10:15 PM</td>
+                <td>Dinner</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div id="awardsDress" class="content-section fade">
+          <div class="event-card text-sm">
+            <strong>Dress Code:</strong> Urban Western Wear<br />
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------------- DAY 2 ---------------- -->
+      <div id="day2" class="hidden fade">
+        <!-- Photoshoot -->
+        <div
+          class="event-card bg-gradient-to-r from-[#E6F8F9] to-white shadow-sm border border-[#008B94]/15"
+        >
+          <h3 class="text-lg font-bold text-[#008B94] flex items-center gap-2">
+            📸 Photoshoot
+          </h3>
+          <p class="text-xs text-gray-500">30 November 2025 • Morning</p>
+
+          <a
+            href="https://maps.app.goo.gl/HvrmgaAh1kcYMAP46"
+            target="_blank"
+            class="mt-4 flex items-center justify-between bg-white border border-[#008B94]/20 p-3 rounded-xl hover:shadow-md transition"
+          >
+            <div>
+              <p
+                class="font-semibold text-[#008B94] text-sm flex items-center gap-1"
+              >
+                <span class="material-icons text-base">location_on</span>
+                Near Adage Phase 3
+              </p>
+              <p class="text-xs text-gray-500">Verna Industrial Estate</p>
+            </div>
+            <span class="material-icons text-[#008B94] text-xl"
+              >arrow_forward_ios</span
+            >
+          </a>
+        </div>
+
+        <div class="flex gap-3 justify-center mb-4">
+          <button class="tab-btn active" onclick="openTab('photoSchedule')">
+            Schedule
+          </button>
+          <button class="tab-btn" onclick="openTab('photoDress')">
+            Dress Code
+          </button>
+          <button class="tab-btn" onclick="openTab('photoStand')">
+            Standing Arrangement
+          </button>
+        </div>
+
+        <!-- Photoshoot Schedule -->
+        <div id="photoSchedule" class="content-section active fade">
+          <div class="event-card text-center text-sm">
+            Reporting at <strong>06:30 AM Sharp</strong><br />
+          </div>
+
+          <!-- 🔶 Highlight Note -->
+          <div class="mt-4 mb-6">
+            <div
+              class="bg-gradient-to-r from-[#FFF4D8] to-[#FFEBC7] border border-[#E6C472] text-[#A37610] px-4 py-3 rounded-xl shadow-sm text-center text-xs font-medium"
+            >
+              🍽️
+              <strong
+                >Breakfast will be provided immediately after the Photoshoot at
+                Unit 1</strong
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Dress Code -->
+        <div id="photoDress" class="content-section fade">
+          <div class="event-card text-sm">
+            Official T-shirt, Blue Denims (any shade) & Sports Shoes.
+          </div>
+        </div>
+
+        <!-- Standing Arrangement (Empty for Now) -->
+        <div id="photoStand" class="content-section fade">
+          <div class="event-card text-sm text-center text-gray-500 italic">
+            📋 Standing arrangement details will be updated soon.
+          </div>
+        </div>
+
+        <!-- 🔹 Add extra spacing before Gala Night -->
+        <div class="mt-10"></div>
+
+        <!-- Gala Night -->
+        <div
+          class="event-card bg-gradient-to-r from-[#FFF7E5] to-white shadow-sm border border-[#C9A54A]/15"
+        >
+          <h3 class="text-lg font-bold text-[#C9A54A] flex items-center gap-2">
+            🎉 Gala Night
+          </h3>
+          <p class="text-xs text-gray-500">30 November 2025 • Evening</p>
+
+          <a
+            href="https://maps.app.goo.gl/H6oGtwhRBJqYUosC9"
+            target="_blank"
+            class="mt-4 flex items-center justify-between bg-white border border-[#C9A54A]/20 p-3 rounded-xl hover:shadow-md transition"
+          >
+            <div>
+              <p
+                class="font-semibold text-[#C9A54A] text-sm flex items-center gap-1"
+              >
+                <span class="material-icons text-base">location_on</span>
+                Adage Unit 2
+              </p>
+              <p class="text-xs text-gray-500">Verna, Goa</p>
+            </div>
+            <span class="material-icons text-[#C9A54A] text-xl"
+              >arrow_forward_ios</span
+            >
+          </a>
+        </div>
+
+        <div class="flex gap-3 justify-center mb-4">
+          <button class="tab-btn active" onclick="openTab('galaSchedule')">
+            Schedule
+          </button>
+          <button class="tab-btn" onclick="openTab('galaDress')">
+            Dress Code
+          </button>
+        </div>
+
+        <div id="galaSchedule" class="content-section active fade">
+          <div class="event-card">
+            <table class="w-full text-sm text-center">
+              <tr class="bg-[#C9A54A] text-white">
+                <th>TIME</th>
+                <th>EVENT</th>
+              </tr>
+              <tr>
+                <td>5:00 PM</td>
+                <td>Reporting</td>
+              </tr>
+              <tr>
+                <td>5:30 PM</td>
+                <td>Opening Ceremony</td>
+              </tr>
+              <tr>
+                <td>6:00 PM</td>
+                <td>Welcome & Cake Cutting</td>
+              </tr>
+              <tr>
+                <td>7:15 PM</td>
+                <td>Entertainment Part 1</td>
+              </tr>
+              <tr>
+                <td>8:45 PM</td>
+                <td>Entertainment Part 2</td>
+              </tr>
+              <tr>
+                <td>10:15 PM</td>
+                <td>SOA</td>
+              </tr>
+              <tr>
+                <td>10:45 PM</td>
+                <td>Dinner & Party Begins</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div id="galaDress" class="content-section fade">
+          <div class="event-card text-sm">Western Party Wear</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Navigation -->
+    <!-- <nav class="mobile-nav fixed bottom-3 left-1/2 -translate-x-1/2 w-[92%] px-4 py-2 rounded-full flex justify-around md:hidden z-50 shadow-lg">
+    <a href="index.html"><span class="material-icons">home</span><div>Home</div></a>
+    <a href="schedule.html" class="text-[#008B94]"><span class="material-icons">event</span><div>Schedule</div></a>
+    <a href="rules.html"><span class="material-icons">rule</span><div>Guidelines</div></a>
+    <a href="contacts.html"><span class="material-icons">call</span><div>Contacts</div></a>
+    <a href="guest.html"><span class="material-icons">flight_takeoff</span><div>Outstation</div></a>
+  </nav> -->
+
+    <!-- Bottom Mobile Navigation -->
+    <nav
+      class="mobile-nav fixed bottom-3 left-1/2 -translate-x-1/2 w-[92%] px-4 py-2 rounded-full flex justify-around md:hidden z-50 shadow-lg"
+    >
+      <a href="index.html"
+        ><span class="material-icons">home</span>
+        <div>Home</div></a
+      >
+      <a href="schedule.html" class="text-[#008B94]"
+        ><span class="material-icons">event</span>
+        <div>Schedule</div></a
+      >
+      <a href="rules.html"
+        ><span class="material-icons">rule</span>
+        <div>Guidelines</div></a
+      >
+      <a href="contacts.html"
+        ><span class="material-icons">call</span>
+        <div>Contacts</div></a
+      >
+      <a href="guest.html"
+        ><span class="material-icons">flight_takeoff</span>
+        <div>Outstation</div></a
+      >
+    </nav>
+
+    <!-- Footer -->
+    <footer class="text-center py-5 text-xs mt-12 border-t border-gray-200">
+      © 2025 Adage Automation Pvt. Ltd
+      <br />
+      One Team • One Soul
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Auto Open Correct Day & Section Based on URL
+      window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        const day = params.get("day");
+        const section = params.get("section");
+
+        if (day) {
+          showDay(parseInt(day));
+        }
+
+        if (section) {
+          setTimeout(() => {
+            openTab(section);
+            const target = document.getElementById(section);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 200);
+        }
+      };
+
+      function showDay(day) {
+        document.getElementById("day1").classList.toggle("hidden", day !== 1);
+        document.getElementById("day2").classList.toggle("hidden", day !== 2);
+
+        // Set active styling
+        document
+          .querySelectorAll(".day-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        document.getElementById(`tab${day}`).classList.add("active");
+      }
+
+      function openTab(id) {
+        document
+          .querySelectorAll(".content-section")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

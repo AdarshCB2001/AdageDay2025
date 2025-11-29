@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Guidelines — Adage Day 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: system-ui, sans-serif; background-color: #FFF8F3; padding-bottom: 80px; }
+    h1, h2 { font-family: 'Poppins', sans-serif; }
+
+    nav a { padding-bottom: 4px; border-bottom: 2px solid transparent; transition: all 0.3s ease; }
+    nav a:hover { color: #008B94; border-bottom: 2px solid #008B94; }
+    .nav-active { color: #C9A54A !important; font-weight: 600; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+    .animate-fadeIn { animation: fadeIn 0.6s ease-in-out; }
+
+    .mobile-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.1);
+      border-radius: 28px;
+    }
+    .mobile-nav a {
+      flex: 1; text-align: center; padding: 6px 0; font-size: 11px;
+      transition: transform 0.2s ease;
+    }
+    .mobile-nav a:hover { background-color: rgba(201, 165, 74, 0.15); }
+    .mobile-nav a:active { transform: scale(0.93); }
+
+    ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    ul li::before {
+      content: "•";
+      color: inherit;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+
+  <!-- Header -->
+  <header class="hidden md:block shadow-sm bg-white">
+    <div class="max-w-6xl mx-auto py-4 px-6 flex justify-between items-center">
+      <span class="text-xl font-extrabold tracking-widest text-[#008B94] uppercase cursor-pointer">
+        Adage Day 2025
+      </span>
+      <nav class="flex gap-6 text-sm font-medium">
+        <a href="index.html">Home</a>
+        <a href="message.html">Message</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="rules.html" class="nav-active">Guidelines</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="guest.html">Outstation</a>
+      </nav>
+    </div>
+  </header>
+
+<section class="max-w-3xl mx-auto px-5 py-10 animate-fadeIn">
+
+  <!-- Page Header -->
+  <div class="text-center mb-8">
+    <h1 class="text-3xl font-extrabold text-[#008B94]">Event Guidelines</h1>
+    <p class="text-sm text-gray-600">Follow the instructions to ensure smooth event experience</p>
+    <div class="mt-2 w-20 h-1 bg-[#C9A54A] mx-auto rounded-full"></div>
+  </div>
+
+  <!-- Guidelines Grid -->
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- DO'S -->
+    <div class="bg-white border border-green-100 rounded-xl p-6 shadow-sm">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="material-icons text-green-600 text-xl">check_circle</span>
+        <h2 class="text-lg font-bold text-green-700">DO's</h2>
+      </div>
+      <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+        <li>Report on time for all events and follow the schedule strictly.</li>
+        <li>Dress as per the event-specific dress code (Sports / Photoshoot / Awards / Gala).</li>
+        <li>Do remember your standing position for the photoshoot.</li>
+        <li>Supervise your children and make sure they stay within designated areas.</li>
+        <li>Enjoy responsibly, stay involved, and encourage others in all activities.</li>
+      </ul>
+    </div>
+
+    <!-- DON'Ts -->
+    <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="material-icons text-red-600 text-xl">block</span>
+        <h2 class="text-lg font-bold text-red-700">DON'Ts</h2>
+      </div>
+      <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+        <li>Do not litter or throw food, tissue, or bottles around — use dustbins provided.</li>
+        <li>Do not damage property, décor, lighting, or stage arrangements.</li>
+        <li>Children should not run, loiter, or interrupt any performances.</li>
+        <li>Do not wander into restricted areas, backstage zones, or performance zones.</li>
+        <li>Children below 3 years are not allowed at the event venues.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-nav fixed bottom-3 left-1/2 -translate-x-1/2 w-[92%] px-4 py-2 rounded-full flex justify-around md:hidden z-50 shadow-lg">
+    <a href="index.html"><span class="material-icons">home</span><div>Home</div></a>
+    <a href="schedule.html"><span class="material-icons">event</span><div>Schedule</div></a>
+    <a href="rules.html" class="text-[#008B94]"><span class="material-icons">rule</span><div>Guidelines</div></a>
+    <a href="contacts.html"><span class="material-icons">call</span><div>Contacts</div></a>
+    <a href="guest.html"><span class="material-icons">flight_takeoff</span><div>Outstation</div></a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="text-center py-5 text-xs mt-12 border-t border-gray-200">
+    © 2025 Adage Automation Pvt. Ltd <br/> One Team • One Soul
+  </footer>
+
+</body>
+</html>
